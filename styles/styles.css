@@ -16,17 +16,22 @@ body{
     -o-background-size: cover;
     background-size: cover;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    padding-top: 140px;
+    padding-right: 50px;
+    color: darkolivegreen;
 
 }
 
+.callout-jumbotron{
+
+
+}
 .jumbotron-header{
     background-color: transparent;
+
 }
 
 .quotes-container{
+    background-color: lightgreen;
 
 }
