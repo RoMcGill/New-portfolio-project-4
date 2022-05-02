@@ -1,7 +1,12 @@
 body{
+    background-color: darkolivegreen;
     
 }
 
+*
+{
+    padding: 0;
+}
 
 
 .features-container{
@@ -20,6 +25,8 @@ body{
     padding-right: 50px;
     color: darkolivegreen;
 
+    
+
 }
 
 .callout-jumbotron{
@@ -34,4 +41,9 @@ body{
 .quotes-container{
     background-color: lightgreen;
 
+}
+
+.features-container{
+    background-color: darkolivegreen;
+    color: white;
 }
