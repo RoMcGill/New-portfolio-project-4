@@ -7,3 +7,4 @@
 ### user personal page with all recent activities
 ### recent activitys page
 ### build activity feed/ show all users recent activity
+### addd wireframes to readme
