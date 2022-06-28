@@ -1,7 +1,14 @@
 " " " building models  " " "
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
+
+from django.db.models.signals import post_save
+from django.utils.text import slugify
+
+
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -60,3 +67,8 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
+def user_directory_path(instance, filename):
+    ''' file will be uploded to media root/ user(ID)/filename '''
+    return 'user {0}/{1}'.format(instance.user.id, filename)
