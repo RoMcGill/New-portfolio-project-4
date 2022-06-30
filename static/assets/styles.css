@@ -68,3 +68,13 @@ body {
     min-height: 100vh;
     overflow-x:hidden;
 }
+
+.max{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.hashtag{
+    font-size: 13px;
+    text-decoration: none;
+}

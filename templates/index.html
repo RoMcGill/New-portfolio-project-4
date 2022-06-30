@@ -65,7 +65,105 @@
       </div>
   </div>
   </div>
-  {% block content %}
+ {% block content %}
+  <!--post-->
+{% for post in post_items %}
+  <div class="card img-responsive" style="width: 18rem;">
+    <img class="img-responsive max" src="{{ post.picture.url }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ post.user.username }}</h5>
+      <p class="card-text">{{ post.caption }}</p>
+    </div>
+    <span>{{ post.likes}} Likes</span>
+    <p class ="hashtag">{% for tag in post.tag.all %}<a href="{{tag.get_absolute_url}}">#{{ tag }} </a>{% endfor %}</p>
+    <!--<ul class="list-group list-group-flush">
+      <li class="list-group-item">biggest Catch: </li>
+      <li class="list-group-item">Favorite location: </li>
+      <li class="list-group-item">years Fishing: </li>
+    </ul> -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Comments
+      </button>
+    <div class="card-body">
+      <a href="#" class="card-link">view profile</a>
+      <a href="#" class="card-link">Trip details</a>
+    </div>
+  </div>
+    <!-- Modal -->
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="container">
+              <div class="row bootstrap snippets bootdeys">
+                  <div class="col-md-8 col-sm-12">
+                      <div class="comment-wrapper">
+                          <div class="panel panel-info">
+                              <div class="panel-heading">
+                                  Comment panel
+                              </div>
+                              <div class="panel-body">
+                                  <textarea class="form-control" placeholder="write a comment..." rows="3"></textarea>
+                                  <br>
+                                  <button type="button" class="btn btn-info pull-right">Post</button>
+                                  <div class="clearfix"></div>
+                                  <hr>
+                                  <ul class="media-list">
+                                      <li class="media">
+                                          <a href="#" class="pull-left">
+                                              <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
+                                          </a>
+                                          <div class="media-body">
+                                              <span class="text-muted pull-right">
+                                                  <small class="text-muted">{{ post.posted|date:"d M, Y" }}</small>
+                                              </span>
+                                              <strong class="text-success">{{ post.user.username }}</strong>
+                                              <p>
+                                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                  Lorem ipsum dolor sit amet, <a href="#">#consecteturadipiscing </a>.
+                                              </p>
+                                          </div>
+                                      </li>
+                                      <li class="media">
+                                          <a href="#" class="pull-left">
+                                              <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
+                                          </a>
+                                          <div class="media-body">
+                                              <span class="text-muted pull-right">
+                                                  <small class="text-muted">{{ post.posted|date:"d M, Y" }}</small>
+                                              </span>
+                                              <strong class="text-success">{{ post.user.username }}</strong>
+                                              <p>
+                                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                  Lorem ipsum dolor <a href="#">#ipsumdolor </a>adipiscing elit.
+                                              </p>
+                                          </div>
+                                      </li>
+                                      
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+              
+                  </div>
+              </div>
+              </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--modal-->
+{% endfor %}
+  <!--post-->
         <!--callout-->
     <div class="container-fluid callout-container">
         <div class="row"></div>
